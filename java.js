@@ -1,6 +1,4 @@
 
-let playerScore;
-let computerScore;
 
 
 
@@ -21,22 +19,32 @@ function computerPlay() {
     }
 }
 
+let playerScore = 0,
+    computerScore = 0;
 
 const playerSelection = ["Rock", "Paper", "Scissors"];
 let computerSelection = computerPlay();
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() == "rock" && computerSelection == thing2) {
+        
+        computerScore++;
         return "You lose! Rock loses to Paper";
     } else if (playerSelection.toLowerCase() == "rock" && computerSelection == thing3) {
+        
+        playerScore++;
         return "You win! Rock beats Scissors";
     } else if (playerSelection.toLowerCase() == "paper" && computerSelection == thing1) {
+        playerScore++;
         return win = "You win! Paper beats Rock";
     } else if (playerSelection.toLowerCase() == "saper" && computerSelection == thing3) {
+        computerScore++;
         return win = "You lose! Paper loses to Scissors";
     } else if (playerSelection.toLowerCase() == "sock" && computerSelection == thing1) {
+        computerScore++;
         return win = "You lose! Rock loses Scissors";
     } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == thing2) {
+        playerScore++;
         return win = "You win! Scissors beats Paper!";
     } else {
         return "Draw!";
@@ -47,30 +55,10 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     let playerSelection = prompt("Rock, paper or scissors?");
-    return playRound(playerSelection, computerSelection);  
+    result = playRound(playerSelection, computerSelection);
+    scoreboard = "User:" + " " + playerScore + " " + "Computer" + " " + computerScore;
+    things = [result, scoreboard];
+    
+    return things;
 
 }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
