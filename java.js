@@ -7,7 +7,7 @@
 const thing1 = "Rock",
     thing2 = "Paper",
     thing3 = "Scissors";
-computerPlay();
+
 function computerPlay() {
     let a = Math.random();
     if (a <= 0.33) {
@@ -37,17 +37,17 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection.toLowerCase() == "paper" && computerSelection == thing1) {
         playerScore++;
         return win = "You win! Paper beats Rock";
-    } else if (playerSelection.toLowerCase() == "saper" && computerSelection == thing3) {
+    } else if (playerSelection.toLowerCase() == "paper" && computerSelection == thing3) {
         computerScore++;
         return win = "You lose! Paper loses to Scissors";
-    } else if (playerSelection.toLowerCase() == "sock" && computerSelection == thing1) {
+    } else if (playerSelection.toLowerCase() == "rock" && computerSelection == thing1) {
         computerScore++;
         return win = "You lose! Rock loses Scissors";
     } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == thing2) {
         playerScore++;
         return win = "You win! Scissors beats Paper!";
     } else {
-        return "Draw!";
+        return "Tie!";
     }
 }
 
@@ -57,8 +57,8 @@ function game() {
     let playerSelection = prompt("Rock, paper or scissors?");
     result = playRound(playerSelection, computerSelection);
     scoreboard = "User:" + " " + playerScore + " " + "Computer" + " " + computerScore;
-    things = [result, scoreboard];
+    console.log(scoreboard);
+    return result;
     
-    return things;
 
 }
